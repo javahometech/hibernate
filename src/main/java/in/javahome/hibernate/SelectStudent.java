@@ -7,10 +7,11 @@ import in.javahome.hibernate.entity.Student;
 public class SelectStudent {
 	public static void main(String[] args) {
 
-		Session session = MyHibUtil.getSession();
-		Student s1 = session.load(Student.class, 2);
-		session.close();
+		try(Session session = MyHibUtil.getSession()){
+			Student s1 = session.get(Student.class, 2);
+			session.clear();
+			Student s2 = session.get(Student.class, 2);
+		}
 		
-		System.out.println(s1.getName());// LazyInitializationException
 	}
 }
