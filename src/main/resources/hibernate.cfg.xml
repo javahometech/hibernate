@@ -12,5 +12,7 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
         <mapping class="in.javahome.hibernate.entity.Student"/>
+        <mapping class="in.javahome.hibernate.entity.Employee"/>
+        <mapping class="in.javahome.hibernate.entity.Passport"/>
     </session-factory>
 </hibernate-configuration>

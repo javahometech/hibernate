@@ -13,9 +13,11 @@ public class UpdateStudent {
 			// Fetch the date
 			Student s1 = session.get(Student.class, 2);
 			// Update data by calling setters 
-			s1.setEmail("sitha@gmail.com");
-			s1.setName("Sitha K");
-			session.update(s1);
+			Student s2 = new Student();
+			s2.setEmail("rahul@gmail.com");
+			s2.setName("rahul K");
+			s2.setStdId(2);
+			session.update(s2);
 			tx.commit();
 		}
 	}

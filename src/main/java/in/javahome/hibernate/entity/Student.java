@@ -14,7 +14,6 @@ public class Student implements Serializable {
 	@Id
 	@Column(name="STUD_ID")
 	private Integer stdId;
-	
 	@Column(name = "STUDENT_NAME")
 	private String name;
 	@Column(name = "EMAIL")

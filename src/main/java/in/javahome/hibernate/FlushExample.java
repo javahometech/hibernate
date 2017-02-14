@@ -5,16 +5,14 @@ import org.hibernate.Transaction;
 
 import in.javahome.hibernate.entity.Student;
 
-public class InsertStudent {
+public class FlushExample {
 	public static void main(String[] args) {
 
-		try (Session session = MyHibUtil.getSession()) {
+		Session session = MyHibUtil.getSession() ;
 			Transaction tx = session.beginTransaction();
-			Student s1 = new Student(12, "Babu", "babu@javahome.in");
-			
-			session.persist(s1);
-
+			Student s3 = new Student(10, "Raghu", "raghu@javahome.in");
+			session.save(s3);
 			tx.commit();
-		}
+	
 	}
 }
