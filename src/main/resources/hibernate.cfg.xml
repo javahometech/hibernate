@@ -14,5 +14,7 @@
         <mapping class="in.javahome.hibernate.entity.Student"/>
         <mapping class="in.javahome.hibernate.entity.Employee"/>
         <mapping class="in.javahome.hibernate.entity.Passport"/>
+        <mapping class="in.javahome.hibernate.entity.Vehicle"/>
+        <mapping class="in.javahome.hibernate.entity.Owner"/>
     </session-factory>
 </hibernate-configuration>
