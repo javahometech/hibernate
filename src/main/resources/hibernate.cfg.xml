@@ -16,5 +16,7 @@
         <mapping class="in.javahome.hibernate.entity.Passport"/>
         <mapping class="in.javahome.hibernate.entity.Vehicle"/>
         <mapping class="in.javahome.hibernate.entity.Owner"/>
+        <mapping class="in.javahome.hibernate.entity.Book"/>
+        <mapping class="in.javahome.hibernate.entity.Author"/>
     </session-factory>
 </hibernate-configuration>
