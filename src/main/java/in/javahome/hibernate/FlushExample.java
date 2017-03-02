@@ -10,7 +10,7 @@ public class FlushExample {
 
 		Session session = MyHibUtil.getSession() ;
 			Transaction tx = session.beginTransaction();
-			Student s3 = new Student(10, "Raghu", "raghu@javahome.in");
+			Student s3 = new Student("Raghu", "raghu@javahome.in");
 			session.save(s3);
 			tx.commit();
 	

@@ -1,22 +1,19 @@
 package in.javahome.hibernate.critiria;
 
-import java.util.List;
-
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Projections;
 
 import in.javahome.hibernate.MyHibUtil;
 import in.javahome.hibernate.entity.Book;
 
-public class SelectAllBooks {
+public class SelectCountExample {
 	public static void main(String[] args) {
 		try(Session session = MyHibUtil.getSession()){
 			Criteria crit = session.createCriteria(Book.class);
-//			Select * FROM BOOKS 
-			List<Book> list = crit.list();
-			for (Book book : list) {
-				System.out.println(book.getName());
-			}
+			crit.setProjection(Projections.count("name"));
+			Object count = crit.uniqueResult();
+			System.out.println("Books Count "+count);
 		}
 	}
 }

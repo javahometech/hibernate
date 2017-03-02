@@ -10,7 +10,7 @@ public class InsertStudent {
 
 		try (Session session = MyHibUtil.getSession()) {
 			Transaction tx = session.beginTransaction();
-			Student s1 = new Student(12, "Babu", "babu@javahome.in");
+			Student s1 = new Student("Babu", "babu@javahome.in");
 			
 			session.persist(s1);
 

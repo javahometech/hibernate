@@ -10,7 +10,7 @@ public class SaveOrUpdate {
 
 		try (Session session = MyHibUtil.getSession()) {
 			Transaction tx = session.beginTransaction();
-			Student s1 = new Student(3, "Sitha", "sitha@javahome.in");
+			Student s1 = new Student( "Sitha", "sitha@javahome.in");
 			session.saveOrUpdate(s1);
 			tx.commit();
 		}

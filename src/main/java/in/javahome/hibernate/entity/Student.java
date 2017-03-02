@@ -4,23 +4,25 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="STUDENT")
+@Table(name="STUDENT_DEMO_AUTO")
 public class Student implements Serializable {
 	
 	@Id
 	@Column(name="STUD_ID")
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer stdId;
 	@Column(name = "STUDENT_NAME")
 	private String name;
 	@Column(name = "EMAIL")
 	private String email;
 	
-	public Student(Integer stdId, String name, String email) {
-		this.stdId = stdId;
+	public Student(String name, String email) {
 		this.name = name;
 		this.email = email;
 	}

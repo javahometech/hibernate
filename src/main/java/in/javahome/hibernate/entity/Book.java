@@ -5,11 +5,15 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.persistence.Version;
 
 @Entity
 @Table(name = "BOOKS")
@@ -17,6 +21,11 @@ public class Book {
 	@Column(name = "BOOK_ID")
 	@Id
 	private Integer bookId;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Version
+	@Column(name="OPT_VERSION")
+	private int optVersion;
+	
 	@Column(name = "BOOK_NAME")
 	private String name;
 
@@ -27,6 +36,10 @@ public class Book {
 	     joinColumns= @JoinColumn(name="BOOK_ID"),
         inverseJoinColumns=@JoinColumn(name="AUTHOR_ID"))
 	private Set<Author> authors = new HashSet<>();
+	
+	@Transient
+	private String demo;
+	
 	public Integer getBookId() {
 		return bookId;
 	}
